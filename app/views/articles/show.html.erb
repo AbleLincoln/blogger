@@ -1,4 +1,10 @@
 <h1><%= @article.title %></h1>
+<p class="tag_list">
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
 <p><%= @article.body %></p>
 
 <%= link_to "Back to Articles", articles_path, class: "new_article" %>
